@@ -1,20 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ServicesController;
+use App\Http\Controllers\ContactController;
 
-Route::get('/', function () {
-    return view('home');
-});
-
-
-Route::get('/about', function () {
-    return view('about');
-});
-
-Route::get('/services', function () {
-    return view('services');
-});
-
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/about', [AboutController::class, 'index']);
+Route::get('/services', [ServicesController::class, 'index']);
+Route::get('/contact', [ContactController::class, 'index']);
